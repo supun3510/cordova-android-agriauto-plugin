@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-android-marauto-plugin"
+        version="1.0.0">
+
+  <name>MRAutomation</name>
+
+  <description>Cordova Android MR Automation Plugin</description>
+
+  <author>Udara Kasun</author>
+
+  <engines>
+    <engine name="cordova" version=">=5.0.0"/>
+  </engines>
+   
+   <js-module src="www/mrauto.js" name="Mrauto">
+      <clobbers target="cordova.plugins.mrauto" />
+    </js-module>
+   
+  <!-- android -->
+  <platform name="android">
+    
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="Mrauto">
+        <param name="android-package" value="com.android.plugins.Mrauto" />
+      </feature>
+    </config-file>
+	 
+    <source-file src="src/android/com/android/plugins/Mrauto.java" target-dir="src/com/android/plugins"/>
+	<source-file src="src/android/com/android/plugins/GPSLocations.java" target-dir="src/com/android/plugins"/>
+	<source-file src="src/android/com/android/plugins/LocationService.java" target-dir="src/com/android/plugins"/>	
+	<source-file src="src/android/com/android/plugins/DatabaseService.java" target-dir="src/com/android/plugins"/>
+	<source-file src="src/android/com/android/plugins/APIService.java" target-dir="src/com/android/plugins"/>	
+	<source-file src="src/android/com/android/plugins/AutoStart.java" target-dir="src/com/android/plugins"/>	
+	 
+  </platform>
+   
+  
+  <config-file target="AndroidManifest.xml" parent="/manifest">
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.CAMERA" /> 
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+  </config-file>
+  
+  <config-file target="AndroidManifest.xml" parent="/manifest/application"> 
+        <service android:name="com.android.plugins.LocationService"  android:enabled="true" android:exported="true"/>  
+		 
+		  <receiver android:name="com.android.plugins.AutoStart"  android:enabled="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+					 	
+            </intent-filter>
+        </receiver>  
+  </config-file>
+ 
+</plugin>
