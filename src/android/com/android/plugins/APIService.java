@@ -25,7 +25,7 @@ import java.lang.System;
  
 public class APIService{
 	Context context;
-	public final String URl= "http://hbsiwebs-002-site21.htempurl.com/api/MobileApi/UpdateMerchandizerHistory?";//testGet?";//";
+	public final String URl= "http://gtautomation.hayflex.com/api/MobileApi/UpdateMerchandizerHistory?";//testGet?";//";
 	private final String USER_AGENT = "Cordova";
 	 
 	public APIService(Context context) { 		
