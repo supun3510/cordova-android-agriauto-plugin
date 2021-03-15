@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/udara/ordova-android-marauto-plugin.git"
+    "url": "git+https://github.com/supun3510/cordova-android-agriauto-plugin.git"
   },
   "keywords": [
     "ecosystem:cordova",
