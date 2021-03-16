@@ -1,7 +1,7 @@
 {
   "name": "cordova-android-marauto-plugin",
   "version": "1.0.0",
-  "description": "Android MR Automation App Check And Request",
+  "description": "Cordova Android MR Automation Plugin",
   "cordova": {
     "id": "cordova-android-marauto-plugin",
     "platforms": [
@@ -22,6 +22,10 @@
       "version": ">=5.0.0"
     }
   ],
-  "author": "Udara Kasun",
-  "license": "MIT" 
+  "author": "Supun Samarawickrama",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/supun3510/cordova-android-agriauto-plugin/issues"
+  },
+  "homepage": "https://github.com/supun3510/cordova-android-agriauto-plugin#readme"
 }
